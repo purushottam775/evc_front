@@ -1,18 +1,23 @@
 import axios from 'axios';
 
 // Backend URL from environment variable
+// TEMPORARY FIX: Force the correct API URL
 const API_URL = import.meta.env.VITE_API_URL || 'https://evc-backend-3.onrender.com/api';
 
+// EMERGENCY FIX: If the URL doesn't end with /api, force it
+const FINAL_API_URL = API_URL.endsWith('/api') ? API_URL : 'https://evc-backend-3.onrender.com/api';
+
 // Debug logging - Always show in production for debugging
-console.log('🔧 API Configuration (v2.2):');
+console.log('🔧 API Configuration (v2.3 - EMERGENCY FIX):');
 console.log('  VITE_API_URL:', import.meta.env.VITE_API_URL);
-console.log('  Final API_URL:', API_URL);
+console.log('  Original API_URL:', API_URL);
+console.log('  FINAL_API_URL (used):', FINAL_API_URL);
 console.log('  Environment:', import.meta.env.MODE);
 console.log('  Build timestamp:', new Date().toISOString());
-console.log('  ⚠️  API URL should end with /api:', API_URL.endsWith('/api'));
+console.log('  ⚠️  API URL should end with /api:', FINAL_API_URL.endsWith('/api'));
 
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: FINAL_API_URL,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
