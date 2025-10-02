@@ -26,6 +26,9 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "YOUR_GOOGLE_CLIENT_ID_HERE";
 
 function App() {
+  // Version check for deployment tracking
+  console.log('🚀 EV App v2.1 - API Fix Build');
+  
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
       <Router>
