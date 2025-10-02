@@ -3,12 +3,11 @@ import axios from 'axios';
 // Backend URL from environment variable
 const API_URL = import.meta.env.VITE_API_URL || 'https://evc-backend-3.onrender.com/api';
 
-// Debug logging
-if (import.meta.env.DEV) {
-  console.log('🔧 API Configuration:');
-  console.log('  VITE_API_URL:', import.meta.env.VITE_API_URL);
-  console.log('  Final API_URL:', API_URL);
-}
+// Debug logging - Always show in production for debugging
+console.log('🔧 API Configuration:');
+console.log('  VITE_API_URL:', import.meta.env.VITE_API_URL);
+console.log('  Final API_URL:', API_URL);
+console.log('  Environment:', import.meta.env.MODE);
 
 const api = axios.create({
   baseURL: API_URL,
