@@ -22,13 +22,12 @@ import UserDashboard from './pages/user/UserDashboard';
 // Admin Pages
 import AdminDashboard from './pages/admin/AdminDashboard';
 
-// Google Client ID - Disabled for now
-// const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "YOUR_GOOGLE_CLIENT_ID_HERE";
+// Google Client ID
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "YOUR_GOOGLE_CLIENT_ID_HERE";
 
 function App() {
   return (
-    // Google OAuth temporarily disabled - uncomment when you have valid client ID
-    // <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
       <Router>
         <AuthProvider>
           <ToastContainer
@@ -86,7 +85,7 @@ function App() {
           </Routes>
         </AuthProvider>
       </Router>
-    // </GoogleOAuthProvider>
+    </GoogleOAuthProvider>
   );
 }
 
