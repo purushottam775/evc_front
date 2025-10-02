@@ -129,7 +129,7 @@ export const AuthProvider = ({ children }) => {
   // Alternative Google OAuth method using redirect flow
   const googleLoginRedirect = () => {
     // Redirect to backend Google OAuth endpoint
-    const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    const backendUrl = import.meta.env.VITE_API_URL || 'https://evc-backend-3.onrender.com/api';
     window.location.href = `${backendUrl}/users/google`;
   };
 

@@ -2,7 +2,7 @@ import { GoogleLogin } from '@react-oauth/google';
 
 const GoogleButton = ({ onSuccess, onError, text = "Sign in with Google", disabled = false }) => {
   const handleGoogleRedirect = () => {
-    const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    const backendUrl = import.meta.env.VITE_API_URL || 'https://evc-backend-3.onrender.com/api';
     window.location.href = `${backendUrl}/users/google`;
   };
 

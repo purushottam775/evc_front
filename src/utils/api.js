@@ -1,7 +1,14 @@
 import axios from 'axios';
 
 // Backend URL from environment variable
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || 'https://evc-backend-3.onrender.com/api';
+
+// Debug logging
+if (import.meta.env.DEV) {
+  console.log('🔧 API Configuration:');
+  console.log('  VITE_API_URL:', import.meta.env.VITE_API_URL);
+  console.log('  Final API_URL:', API_URL);
+}
 
 const api = axios.create({
   baseURL: API_URL,

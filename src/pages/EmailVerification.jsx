@@ -32,7 +32,8 @@ const EmailVerification = () => {
 
   const verifyToken = async (token) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/verify/${token}`);
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://evc-backend-3.onrender.com/api';
+      const response = await fetch(`${apiUrl}/users/verify/${token}`);
       
       if (response.ok) {
         setStatus('success');

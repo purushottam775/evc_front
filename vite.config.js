@@ -19,7 +19,7 @@ export default defineConfig({
     proxy: {
       // Forward /api requests to your backend during development
       '/api': {
-        target: 'https://evc-backend-2.onrender.com',
+        target: 'https://evc-backend-3.onrender.com',
         changeOrigin: true,
         secure: true
       }
