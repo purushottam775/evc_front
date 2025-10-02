@@ -1,10 +1,9 @@
 import axios from 'axios';
 
 // Backend URL from environment variable
-// TEMPORARY FIX: Force the correct API URL
 const API_URL = import.meta.env.VITE_API_URL || 'https://evc-backend-3.onrender.com/api';
 
-// EMERGENCY FIX: If the URL doesn't end with /api, force it
+// Ensure the API URL is correct
 const FINAL_API_URL = API_URL.endsWith('/api') ? API_URL : 'https://evc-backend-3.onrender.com/api';
 
 // Debug logging - Always show in production for debugging
@@ -23,7 +22,7 @@ const api = axios.create({
     Accept: 'application/json',
   },
   timeout: 15000, // 15s timeout
-  withCredentials: false, 
+  withCredentials: false, // Set to false unless using cookies
 });
 
 // Request interceptor
