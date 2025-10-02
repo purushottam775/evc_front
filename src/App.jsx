@@ -27,7 +27,8 @@ const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "YOUR_GOOGLE_C
 
 function App() {
   // Version check for deployment tracking
-  console.log('🚀 EV App v2.1 - API Fix Build');
+  console.log('🚀 EV App v2.2 - FORCE DEPLOYMENT BUILD');
+  console.log('🔄 Cache bust timestamp:', Date.now());
   
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
