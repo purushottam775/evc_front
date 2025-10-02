@@ -10,7 +10,7 @@ const api = axios.create({
     Accept: 'application/json',
   },
   timeout: 15000, // 15s timeout
-  withCredentials: false, // Change to true if backend uses cookies
+  withCredentials: false, 
 });
 
 // Request interceptor
